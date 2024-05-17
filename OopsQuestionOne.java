@@ -1,3 +1,5 @@
+//Grains 
+
 import java.util.Scanner;
 
 public class OopsQuestionOne {
