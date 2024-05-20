@@ -11,6 +11,5 @@ public class StringBuild {
         str.reverse();
         System.out.println(str.length());
         System.out.println(str.delete(1, 4));
-
     }
 }
