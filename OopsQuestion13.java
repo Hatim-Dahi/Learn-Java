@@ -67,25 +67,25 @@ public class OopsQuestion13 {
             String e = sc.nextLine();
             sims[i] = new Sim(a, b, c, d, e);
         }
-        String circle = sc.nextLine();
-        double rating = sc.nextDouble();
-        Sim[] list = matchAndSort(sims, circle, rating);
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i].getid());
+        String x= sc.nextLine();
+        double y= sc.nextDouble();
+        Sim[] obj= m1(sims, x, y);
+        for(Sim i:obj){
+            System.out.println(i.getid());
         }
     }
 
-    public static Sim[] matchAndSort(Sim[] sims, String circle, double rating) {
-        ArrayList<Sim> list = new ArrayList<>();
+    public static Sim[] m1(Sim[] sims, String x, double y) {
+        ArrayList<Sim> arr = new ArrayList<>();
         for (Sim i : sims) {
-            if (i.getcircle().equalsIgnoreCase(circle) && i.getrating() < rating) {
-                list.add(i);
+            if (i.getcircle().equalsIgnoreCase(x) && i.getrating() < y) {
+                arr.add(i);
             }
         }
-        Sim[] result = new Sim[list.size()];
-        result = list.toArray(result);
-        Arrays.sort(result, Comparator.comparingInt(Sim::getbalance).reversed());
-        return result;
+        Sim[] res = new Sim[arr.size()];
+        res = arr.toArray(res);
+        Arrays.sort(res, Comparator.comparingInt(Sim::getbalance).reversed());
+        return res;
     }
 }
 
